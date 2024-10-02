@@ -34,4 +34,5 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
 gen_points(100, 100, 100, 10, 5, 10)
 s.close()
 s = open("systems.txt", "r")
-print(s.readlines())
+for item in s.readlines():
+  print(item)
