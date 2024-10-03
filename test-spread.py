@@ -1,5 +1,6 @@
 from random import randint
 from math import sqrt
+from namegenerator import *
 systems = open("systems.txt", "w")
 systems.close()
 s = open("systems.txt", "a")
@@ -8,6 +9,7 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
   a = randint(0, x)
   b = randint(0, y)
   c = randint(0, z)
+  s.write(gen_name(4) + "\n")
   s.write(str(a) + "\n")
   s.write(str(b) + "\n")
   s.write(str(c))
@@ -20,13 +22,25 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       f = open("systems.txt", "r")
       g = f.readlines()
       shortestdist = maxdis + 1
-      for item in range(1, len(g) + 1, 3):
-        x1 = g[item]
-        y1 = g[item + 1]
-        z1 = g[item + 2]
+      for item in range(1, len(g) + 1, 4):
+        x1 = g[item + 1]
+        y1 = g[item + 2]
+        z1 = g[item + 3]
         dist = sqrt((a - x1)**2 + (b - y1)**2 + (c - z1)**2)
         if dist < mindis:
           continue
+        elif dist < shortestdist:
+          shortestdist = dist
+      if shortestdist == maxdis + 1:
+        continue
+      k = 0
+      while k != 1:
+        name = gen_name(4)
+        for i in range(1, len(g) + 1, 4):
+          if g[i] == name:
+            continue
+        k = 1
+      s.write("\n" + name)
       s.write("\n" + str(a))
       s.write("\n" + str(b))
       s.write("\n" + str(c))
