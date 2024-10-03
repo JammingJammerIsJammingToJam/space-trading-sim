@@ -29,10 +29,6 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
         dist = sqrt((a - x1)**2 + (b - y1)**2 + (c - z1)**2)
         if dist < mindis:
           continue
-        elif dist < shortestdist:
-          shortestdist = dist
-      if shortestdist == maxdis + 1:
-        continue
       k = 0
       while k != 1:
         name = gen_name(4)
