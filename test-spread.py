@@ -36,8 +36,8 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       k = 0
       while k != 1:
         name = gen_name(4)
-        for i in range(1, len(g) + 1, 4):
-          if g[i] == name:
+        for jail in range(1, len(g) + 1, 4):
+          if g[jail] == name:
             continue
         k = 1
       s.write("\n" + name)
