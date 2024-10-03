@@ -21,7 +21,7 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       c = randint(0, z)
       f = open("systems.txt", "r")
       g = f.readlines()
-      shortestdist = maxdis + 1
+      # shortestdist = maxdis + 1
       for item in range(1, len(g) + 1, 4):
         x1 = g[item + 1]
         y1 = g[item + 2]
