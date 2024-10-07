@@ -30,9 +30,9 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
         dist = sqrt((a - x1)**2 + (b - y1)**2 + (c - z1)**2)
         if dist < mindis:
           continue
-        if maxdis < dist:
+        if maxdis > dist:
           maxdisreach = 1
-      if maxdisreach == 1:
+      if maxdisreach == 0:
         continue
       k = 0
       while k != 1:
