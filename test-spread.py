@@ -22,6 +22,7 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       f = open("systems.txt", "r")
       g = f.readlines()
       # shortestdist = maxdis + 1
+      maxdisreach = 0
       for item in range(1, len(g) + 1, 4):
         x1 = g[item + 1]
         y1 = g[item + 2]
@@ -29,6 +30,10 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
         dist = sqrt((a - x1)**2 + (b - y1)**2 + (c - z1)**2)
         if dist < mindis:
           continue
+        if maxdis < dist:
+          maxdisreach = 1
+      if maxdisreach == 1:
+        continue
       k = 0
       while k != 1:
         name = gen_name(4)
