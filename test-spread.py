@@ -30,7 +30,7 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
         dist = sqrt((a - x1)**2 + (b - y1)**2 + (c - z1)**2)
         if dist < mindis:
           continue
-        if maxdis > dist:
+        if maxdis >= dist:
           maxdisreach = 1
       if maxdisreach == 0:
         continue
@@ -46,7 +46,7 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       s.write("\n" + str(b))
       s.write("\n" + str(c))
       done = 1
-gen_points(100, 100, 100, 10, 5, 10)
+gen_points(100, 100, 100, 10, 5, 50)
 s.close()
 s = open("systems.txt", "r")
 for item in s.readlines():
