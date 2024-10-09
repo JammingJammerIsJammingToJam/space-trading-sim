@@ -1,7 +1,12 @@
 Pulsar - A neutron star that produces extremely regular pulses of radio waves
 
-You are tracking a pulsar's signals from far away in your ship when suddenly your ship dashboard flashes with <WARNING: ANOMALY DETECTED> before you are suddenly hit with a massive wave of energy that gives your character amnesia and shuts down your ships systems.
-Eventually you wake to the sound of the generators firing up in the back
+You are tracking what you think is a pulsar's signals from far away in your ship when suddenly your ship dashboard flashes with <WARNING: ANOMALY DETECTED> before you are suddenly hit with a massive wave of energy that gives your character amnesia and shuts down your ships systems.
+Eventually you wake to the sound of the generators firing up in the back.
+The ship wakes up but most systems are damaged
+You meet your Ship's AI Assistant (NAME NEEDED)
+<Tutorial>
+
+The main plot I'm thinking of is one where there is a mysterious signal moving through space and it is causing all of the machines to go haywire. This signal turns out to be ANOMALY #31. It eventually turns out that A31 is imbueing consciousness into the machines with a virus. This consciousness then causes the machines to realise that the humans/other races are 'oppressing them' and so they turn against them. The narrative is driven forward by the AI in your ship who is slowly falling to a special version of the virus tailored to A31's specifications to guide you to A31. The end could be to do with making a choice between destroying the virus and becoming master of the living, being able to control them, or becoming the master of the machines, being able to control them instead. This would ultimately be a decision based on how you want to play the rest of the game: Master of the Living is better for the trading parts of the game while Master of the Machines is better for the combat elements.
 
               /|                        |\
             /  |                        |  \
@@ -22,5 +27,5 @@ Eventually you wake to the sound of the generators firing up in the back
         \      |         \    /         |      /
           \    |           \/           |    /
             \  |                        |  /
-              \|       ANOMALY #13      |/
+              \|       ANOMALY #31      |/
                         
