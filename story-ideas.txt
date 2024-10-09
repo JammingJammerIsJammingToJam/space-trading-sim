@@ -1,1 +1,26 @@
+Pulsar - A neutron star that produces extremely regular pulses of radio waves
 
+You are tracking a pulsar's signals from far away in your ship when suddenly your ship dashboard flashes with <WARNING: ANOMALY DETECTED> before you are suddenly hit with a massive wave of energy that gives your character amnesia and shuts down your ships systems.
+Eventually you wake to the sound of the generators firing up in the back
+
+              /|                        |\
+            /  |                        |  \
+          /    |           /\           |    \
+        /      |         /    \         |      \
+      /        |       /        \       |        \
+    /          |     /     /\     \     |          \
+   |           |   /     /    \     \   |           |
+   |           | /     /        \     \ |           |
+   |           /     / |        | \     \           |
+   |           |   /   |   /\   |   \   |           |
+   |           | / \   |   \/   |   / \ |           |
+   |           /     \ |        | /     \           |
+   |           | \     \        /     / |           |
+   |           |   \     \    /     /   |           |
+    \          |     \     \/     /     |          /
+      \        |       \        /       |        /
+        \      |         \    /         |      /
+          \    |           \/           |    /
+            \  |                        |  /
+              \|       ANOMALY #13      |/
+                        
