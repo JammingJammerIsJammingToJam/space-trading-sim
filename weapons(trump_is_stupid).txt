@@ -13,5 +13,5 @@ Can upgrade into the following:
 -Sword
 -Trident
 -Spear
--hammer
--pickaxe
+-Hammer
+-Pickaxe
