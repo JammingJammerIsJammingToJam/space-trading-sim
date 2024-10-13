@@ -1,11 +1,16 @@
 from random import randint
 from math import sqrt
 from namegenerator import *
-systems = open("systems.txt", "w")
-systems.close()
-s = open("systems.txt", "a")
-  
+import os
+def checkSave(file):
+  if os.path.isfile(file):
+    return open(file, "a")
+  else:
+    j = open(file, "w")
+    j.close()
+    return open(file, "a")  
 def gen_points(x, y, z, ptotal, mindis, maxdis):
+  s = checkSave("systems.txt")
   a = randint(0, x)
   b = randint(0, y)
   c = randint(0, z)
@@ -41,8 +46,28 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       s.write("\n" + str(b))
       s.write("\n" + str(c))
       done = 1
-gen_points(100, 100, 100, 10, 5, 10)
-s.close()
+  s.close()
+def gen_planets():
+  cyclone = open("systems.txt", "r")
+  plasma = checkSave("planets.txt")
+  for item in cyclone.readlines():
+    k = 0
+    while k != 1:
+      name = gen_name(5)
+      jimothy = open("planets.txt", "r")
+      for jail in range(1, len(jimothy.readlines()) + 1):
+        if jimothy[jail] == name:
+          continue
+      k = 1
+    plasma.write(name + "\n")
+  plasma.close()
+if not os.path.isfile("systems.txt"):
+  gen_points(100, 100, 100, 10, 5, 10)
+if not os.path.isfile("planets.txt"):
+  gen_planets()
 s = open("systems.txt", "r")
 for item in s.readlines():
+  print(item)
+jailbreaker = open("planets.txt", "r")
+for item in jailbreaker.readlines():
   print(item)
