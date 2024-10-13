@@ -1,0 +1,18 @@
+We need different weapons and tiers. we may also need armour and items to upgrade or go alongside these. We could also have weapons that are exclusive to machines and humans and
+that can be mounted on the spaceship. Edit this file if you have any reasonable ideas.
+This is my weapon prototype that may or may not be used in the final game.
+
+
+
+Twig:
+10 damage
+1 second cooldown
+ability:block hits
+melee weapon
+Can upgrade into the following:
+-Axe
+-Sword
+-Trident
+-Spear
+-Hammer
+-Pickaxe
