@@ -1,10 +1,15 @@
 from random import randint
 from math import sqrt
 from namegenerator import *
-systems = open("systems.txt", "w")
-systems.close()
-s = open("systems.txt", "a")
-  
+import os
+def checkSave(file):
+  if os.path.isfile(file):
+    return open(file, "a")
+  else:
+    j = open(file, "w")
+    j.close()
+    return open(file, "a")  
+s = checkSave("systems.txt")
 def gen_points(x, y, z, ptotal, mindis, maxdis):
   a = randint(0, x)
   b = randint(0, y)
@@ -22,7 +27,6 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       f = open("systems.txt", "r")
       g = f.readlines()
       # shortestdist = maxdis + 1
-      maxdisreach = 0
       for item in range(1, len(g) + 1, 4):
         x1 = g[item + 1]
         y1 = g[item + 2]
@@ -30,10 +34,6 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
         dist = sqrt((a - x1)**2 + (b - y1)**2 + (c - z1)**2)
         if dist < mindis:
           continue
-        if maxdis >= dist:
-          maxdisreach = 1
-      if maxdisreach == 0:
-        continue
       k = 0
       while k != 1:
         name = gen_name(4)
@@ -46,8 +46,23 @@ def gen_points(x, y, z, ptotal, mindis, maxdis):
       s.write("\n" + str(b))
       s.write("\n" + str(c))
       done = 1
-gen_points(100, 100, 100, 10, 5, 50)
+    cyclone = open("systems.txt", "r")
+    plasma = checkSave("planets.txt")
+    for item in cyclone.readlines():
+      k = 0
+      while k != 1:
+        name = gen_name(5)
+        for jail in range(1, len(cyclone) + 1):
+          if cyclone[jail] == name:
+            continue
+        k = 1
+      plasma.write(name)
+    plasma.close()
+gen_points(100, 100, 100, 10, 5, 10)
 s.close()
 s = open("systems.txt", "r")
 for item in s.readlines():
+  print(item)
+jailbreaker = open("planets.txt", "r")
+for item in jailbreaker.readlines():
   print(item)
