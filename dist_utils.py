@@ -59,6 +59,6 @@ def dijkstra_dist(points, start, end, radius):
 
 
 
-print(create_edges([[1, 1], [2, 2], [3, 3]], 2), 1)
-print(dijkstra([[1, 1], [2, 2], [3, 3], [5, 5]], 0, 2, 2))
-print(dijkstra_dist([[1, 1], [2, 2], [3, 3], [5, 5]], 0, 2, 2))
+#print(create_edges([[1, 1], [2, 2], [3, 3]], 2), 1)
+#print(dijkstra([[1, 1], [2, 2], [3, 3], [5, 5]], 0, 2, 2))
+#print(dijkstra_dist([[1, 1], [2, 2], [3, 3], [5, 5]], 0, 2, 2))

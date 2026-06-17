@@ -2,9 +2,9 @@ import random
 from dist_utils import dist
 import math
 
-def gen_planets(x1, x2, y1, y2, r, i):
+def gen_planets(x1, x2, y1, y2, r, i, p):
     positions = [[0, 0]]
-    for j in range(0, 2000):
+    for j in range(0, p):
         while True:
             pos = [random.randint(x1, x2), random.randint(y1, y2)]
             dists = [dist(pos, pos2) for pos2 in positions]
@@ -25,10 +25,12 @@ y1 = -100
 y2 = 100
 r = 1
 i = 10
+p = 1000
 
+planets = gen_planets(x1, x2, y1, y2, r, i, p)
 for y in range(y1, y2+1):
     for x in range(x1, x2+1):
-        if [x, y] in gen_planets(x1, x2, y1, y2, r, i):
+        if [x, y] in planets:
             print('#', end='')
         else:
             print('.', end='')
