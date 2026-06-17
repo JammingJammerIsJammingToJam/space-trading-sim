@@ -1,5 +1,5 @@
 def dist(pos1, pos2):
-    return ((pos2[0] - pos1[0]) ** 2 + (pos2[1] - pos1[1]) ** 2 + (pos2[2] - pos1[2]) ** 2) ** 0.5
+    return ((pos2[0] - pos1[0]) ** 2 + (pos2[1] - pos1[1]) ** 2) ** 0.5
 
 def points_in_radius(pos, points, radius):
     return [point for point in points if dist(pos, point) <= radius]
@@ -59,6 +59,6 @@ def dijkstra_dist(points, start, end, radius):
 
 
 
-print(create_edges([[1, 1, 1], [2, 2, 2], [3, 3, 3]], 2), 1)
-print(dijkstra([[1, 1, 1], [2, 2, 2], [3, 3, 3], [5, 5, 5]], 0, 2, 2))
-print(dijkstra_dist([[1, 1, 1], [2, 2, 2], [3, 3, 3], [5, 5, 5]], 0, 2, 2))
+print(create_edges([[1, 1], [2, 2], [3, 3]], 2), 1)
+print(dijkstra([[1, 1], [2, 2], [3, 3], [5, 5]], 0, 2, 2))
+print(dijkstra_dist([[1, 1], [2, 2], [3, 3], [5, 5]], 0, 2, 2))
