@@ -8,7 +8,7 @@ def gen_planets(x1, x2, y1, y2, r, i, p):
         while True:
             pos = [random.randint(x1, x2), random.randint(y1, y2)]
             dists = [dist(pos, pos2) for pos2 in positions]
-            if any(k < r for k in dists):
+            if any(k <= r for k in dists):
                 continue
             #calc odds of success / i
             m = min(dists)
