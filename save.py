@@ -73,13 +73,13 @@ def encode_systems(systems):
     new = []
     for sys in systems:
         new2 = []
-        new2.append(encode_name(sys[0]) + encode_coord(sys[1]) + encode_coord(sys[2]) + str(sys[3]))
+        new2.append(encode_name(sys[0]) + encode_coord(sys[1]) + encode_coord(sys[2]) + str(sys[3]) + '!')
         for item in sys[4:]:
             text = ""
             for num in item:
                 text += chars[num]
             new2.append(text)
-        new.append('!'.join(new2))
+        new.append(''.join(new2))
     return '.'.join(new)
 
 def decode_systems(systems):
@@ -94,11 +94,15 @@ def decode_systems(systems):
         news2.append(decode_coord(metadata[-5:-3]))
         news2.append(decode_coord(metadata[-3:-1]))
         news2.append(int(metadata[-1]))
-        for planet in txt[1:]:
+
+        planets = txt[1]
+        for i in range(0, len(txt[1]), 6):
+            planet = planets[i:i+6]
             news2.append([chars.index(num) for num in planet])
         news.append(news2)
     return news
 
 systems = gen_systems(x1, x2, y1, y2, r, i, p)
 print(systems)
+print()
 print(encode_systems(systems))
