@@ -102,7 +102,63 @@ def decode_systems(systems):
         news.append(news2)
     return news
 
+def encode_64(systems):
+    chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!.'
+    nums = [chars.index(char) for char in systems]
+    size = len(nums) * 6 + 2
+    prefix = 8 - (size % 8)
+    if prefix == 8:
+        prefix = 0
+    prefix /= 2
+
+    new = [bin(int(prefix))[2:].zfill(2)] + [bin(n)[2:].zfill(6) for n in nums]
+    
+    eight_bit = ''.join(new) + '0' * int(prefix) * 2
+    splitted = [eight_bit[i:i+8] for i in range(0, len(eight_bit), 8)]
+    
+    characters = [chr(int(num, 2)) for num in splitted]
+    return ''.join(characters)
+
+def decode_64(systems):
+    chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!.'
+    characters = ''.join([format(ord(num), '08b') for num in systems])
+    prefix = int(characters[:2], 2)
+    characters = characters[2:len(characters)-prefix*2]
+    splitted = [characters[i:i+6] for i in range(0, len(characters), 6)]
+    new = [chars[int(num, 2)] for num in splitted]
+    text = ''.join(new)
+    return text
+
+    
+"""
 systems = gen_systems(x1, x2, y1, y2, r, i, p)
 print(systems)
 print()
 print(encode_systems(systems))
+"""
+"""
+with open('save.bin', 'wb') as f:
+    vals = encode_64(encode_systems(gen_systems(x1, x2, y1, y2, r, i, p)))
+    new = [ord(char) for char in vals]
+    f.write(bytes(new))
+"""
+
+def read_file():
+    with open('save.bin', 'rb') as f:
+        data = list(f.read())
+        new = [chr(char) for char in data]
+    return decode_systems(decode_64(new))
+
+def write_file(systems):
+    with open('save.bin', 'wb') as f:
+        vals = encode_64(encode_systems(systems))
+        new = [ord(char) for char in vals]
+        f.write(bytes(new))
+
+
+print(encode_64('fDGmFcl2!qionknhQtgjesjrogiMD9NJU.xABoY9gOone2hM1!MtteqEWCFsyAXedffeCdkFhiJqsrkB'))
+print(decode_64(encode_64('fDGmFcl2!qionknhQtgjesjrogiMD9NJU.xABoY9gOone2hM1!MtteqEWCFsyAXedffeCdkFhiJqsrkB')))
+
+systems = gen_systems(x1, x2, y1, y2, r, i, p)
+write_file(systems)
+print(read_file() == systems)
